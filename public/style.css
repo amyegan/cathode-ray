@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background: #0a0f0d;
+    --foreground: #33ff33;
+}
+
+/*
+    Reset defaults
+*/
+
+body {
+    margin: 0;
+    background: var(--background, #0a0f0d);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+    Layout
+*/
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: 1rem;
+}
+
+.cover > * {
+  margin-block: 2.5rem;
+}
+
+.cover > :first-child:not(main) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(main) {
+  margin-block-end: 0;
+}
+
+.cover > main {
+  margin-block: auto;
+}
+
+main {
+    max-width: 60ch;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  margin-block-start: 1rem;
+}
+
+
+/*
+    CRT effect
+*/
+
+/* Base Screen Styling */
+.crt-screen {
+    background-color: var(--background, #0a0f0d);
+    color: var(--foreground, #33ff33);
+    font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+    padding: 40px;
+    /*height: 100vh;*/
+    position: relative;
+    overflow: hidden;
+    /* Slight blur gives the analog glass tube feel */
+    filter: blur(0.4px);
+    /* Intense green glow for text */
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.5), 0 0 10px rgba(51, 255, 51, 0.3);
+}
+
+/* Scanlines Overlay */
+.crt-screen::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none; /* Allows users to click elements underneath */
+}
+
+/* Screen Flicker Overlay */
+.crt-screen::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: rgba(18, 16, 16, 0.2);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: crt-flicker 0.15s infinite;
+}
+
+/* CRT Refresh Flicker Animation */
+@keyframes crt-flicker {
+    0% { opacity: 0.27861; }
+    5% { opacity: 0.34769; }
+    10% { opacity: 0.23604; }
+    15% { opacity: 0.40626; }
+    20% { opacity: 0.18128; }
+    25% { opacity: 0.35778; }
+    30% { opacity: 0.26212; }
+    35% { opacity: 0.38129; }
+    40% { opacity: 0.20145; }
+    45% { opacity: 0.3985; }
+    50% { opacity: 0.24239; }
+    55% { opacity: 0.30238; }
+    60% { opacity: 0.19494; }
+    65% { opacity: 0.36471; }
+    70% { opacity: 0.21188; }
+    75% { opacity: 0.40913; }
+    80% { opacity: 0.23807; }
+    85% { opacity: 0.31652; }
+    90% { opacity: 0.15012; }
+    95% { opacity: 0.35317; }
+    100% { opacity: 0.22638; }
+}
+
+/*
+    Styles
+*/
+
+h1 {
+    text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+  flex-direction: row;
+  /*padding-block-start: 2em;*/
+}
+
+/* Change to column when screen width is 600 pixels or less */
+@media (max-width: 700px) {
+  ul {
+    gap: 1em;
+    flex-direction: column;
+  }
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:focus-visible, a:focus {
+  outline: 2px solid var(--foreground, #33ff33);
+  background: var(--foreground, #33ff33);
+  color: var(--background, #0a0f0d);
+  font-weight: 600;
+}
+
+p {
+    line-height: 1.5em;
+}

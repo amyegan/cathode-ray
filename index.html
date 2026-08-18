@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="public/style.css">
+
+        <!--<style>
+            /* from https://medium.com/@dovid11564/using-css-animations-to-mimic-the-look-of-a-crt-monitor-3919de3318e2 */
+            .crt {
+                /* scanlines */
+                background: linear-gradient(
+                    to top,
+                    #000000,
+                    #000000,
+                    #333333,
+                    #333333
+                );
+                background-size: cover;
+                background-size: 100% 1px;
+
+                /* retro stuff */
+                color: #00ff00;
+                font-family: "Courier New", monospace;
+                font-size: 50px;
+                text-align: center;
+                text-shadow: 0 0 10px #00ff00;
+
+
+            }
+
+            @media screen {
+                .crt {
+                    animation: scanlines infinite 55s linear;
+                }
+            }
+            @keyframes scanlines {
+                from {
+                    background-position: 0 0;
+                }
+                to {
+                    background-position: 0 -10px;
+                }
+            }
+        </style>-->
+    </head>
+    <body>
+        <div class="crt-screen cover">
+            <h1>Amy Egan</h1>
+            <main class="stack">
+                <p>Amy Egan is a <a href="https://github.com/amyegan">software developer</a> and
+                    <a href="https://community.vercel.com/u/amyegan">community builder</a> with
+                    <span id="years"></span> years of experience at Vercel, PayPal, Central Michigan
+                    University, and more. </p>
+                    <p>Her current goal is to collaborate with <a href="https://community.vercel.com/leaderboard">
+                        clever people</a> and support <a href="https://vercel.com/open-source-program">open
+                        source builders</a>. In her free time, you can find her knitting, playing
+                        board games, or touching grass.</p>
+            </main>
+            <ul>
+                <li>
+                    <a href="https://community.vercel.com/u/amyegan">
+                        Vercel Community
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/amyaegan">X/Twitter</a>
+                </li>
+                <li>
+                    <a href="https://www.reddit.com/user/amyegan/">Reddit</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/amyaegan">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="https://bsky.app/profile/amyegan.dev">Bluesky</a>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+          const yearsElement = document.getElementById('years');
+          const now = new Date();
+          const startDate = new Date('2013-03-15');
+          let years = now.getFullYear() - startDate.getFullYear();
+          if(now.getMonth() < startDate.getMonth()) years--;
+          yearsElement.textContent = years;
+        </script>
+    </body>
+</html>
