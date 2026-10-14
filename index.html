@@ -3,80 +3,53 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Amy Egan</title>
         <link rel="stylesheet" href="public/style.css">
-
-        <!--<style>
-            /* from https://medium.com/@dovid11564/using-css-animations-to-mimic-the-look-of-a-crt-monitor-3919de3318e2 */
-            .crt {
-                /* scanlines */
-                background: linear-gradient(
-                    to top,
-                    #000000,
-                    #000000,
-                    #333333,
-                    #333333
-                );
-                background-size: cover;
-                background-size: 100% 1px;
-
-                /* retro stuff */
-                color: #00ff00;
-                font-family: "Courier New", monospace;
-                font-size: 50px;
-                text-align: center;
-                text-shadow: 0 0 10px #00ff00;
-
-
-            }
-
-            @media screen {
-                .crt {
-                    animation: scanlines infinite 55s linear;
-                }
-            }
-            @keyframes scanlines {
-                from {
-                    background-position: 0 0;
-                }
-                to {
-                    background-position: 0 -10px;
-                }
-            }
-        </style>-->
+        <link rel="icon" type="image/png" href="public/favicon.png">
     </head>
     <body>
-        <div class="crt-screen cover">
+        <div class="crt-screen cover">            
             <h1>Amy Egan</h1>
-            <main class="stack">
-                <p>Amy Egan is a <a href="https://github.com/amyegan">software developer</a> and
-                    <a href="https://community.vercel.com/u/amyegan">community builder</a> with
-                    <span id="years"></span> years of experience at Vercel, PayPal, Central Michigan
-                    University, and more. </p>
-                    <p>Her current goal is to collaborate with <a href="https://community.vercel.com/leaderboard">
-                        clever people</a> and support <a href="https://vercel.com/open-source-program">open
-                        source builders</a>. In her free time, you can find her knitting, playing
-                        board games, or touching grass.</p>
+            <main>
+                <dl>
+                    <dt>Name</dt>
+                        <dd>Amy Egan</dd>
+                    <dt>Description</dt>
+                        <dd>
+                            <p>Amy is a <a href="https://community.vercel.com/u/amyegan">community builder</a> 
+                                and software developer with <span id="years">10+</span> years of experience building for
+                                the web at companies like Vercel and PayPal. she runs live learning sessions, champions 
+                                open source builders, and generally makes sure the developer community has what it needs
+                                to make the web better, faster, and more accessible to everyone.</p>
+                            <p>When she’s not online, you can find her knitting, birding, or strumming a guitar. She 
+                                brings the same curious, hands-on approach to everything she does, whether she’s 
+                                untangling a tricky bit of code or a ball of yarn.</p>
+                        </dd>
+                    <dt>See also</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="https://community.vercel.com/u/amyegan">
+                                        Vercel Community
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/amyaegan">X/Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.reddit.com/user/amyegan/">Reddit</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/amyaegan">LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a href="https://bsky.app/profile/amyegan.dev">Bluesky</a>
+                                </li>
+                            </ul>
+                        </dd>
+                </dl>
             </main>
-            <ul>
-                <li>
-                    <a href="https://community.vercel.com/u/amyegan">
-                        Vercel Community
-                    </a>
-                </li>
-                <li>
-                    <a href="https://x.com/amyaegan">X/Twitter</a>
-                </li>
-                <li>
-                    <a href="https://www.reddit.com/user/amyegan/">Reddit</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/amyaegan">LinkedIn</a>
-                </li>
-                <li>
-                    <a href="https://bsky.app/profile/amyegan.dev">Bluesky</a>
-                </li>
-            </ul>
+            
         </div>
 
         <script>
