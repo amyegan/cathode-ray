@@ -151,6 +151,13 @@ h1 {
     font-size: 1em;
 }
 
+/* Change to ascii font size when screen width is 600 pixels or less */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 0.5rem
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;
