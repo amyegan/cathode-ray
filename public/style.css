@@ -183,10 +183,11 @@ a {
 }
 
 a:focus-visible, a:focus {
-  outline: 2px solid var(--foreground, #33ff33);
-  background: var(--foreground, #33ff33);
-  color: var(--background, #0a0f0d);
-  font-weight: 600;
+    outline: 2px solid var(--foreground, #33ff33);
+    outline-offset: 0;
+    background: var(--foreground, #33ff33);
+    color: var(--background, #0a0f0d);
+    font-weight: 600;
 }
 
 p {
