@@ -64,6 +64,14 @@ main {
   margin-block-start: 1rem;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+}
 
 /*
     CRT effect
@@ -140,7 +148,7 @@ main {
 */
 
 h1 {
-    text-transform: uppercase;
+    font-size: 1em;
 }
 
 ul {
