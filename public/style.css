@@ -151,6 +151,9 @@ ul {
   flex-direction: column;
 }
 
+dt {
+    text-transform: uppercase;
+}
 dd {
     margin-block-start: 0.25em;
 }
